@@ -1,5 +1,7 @@
 # SCREENPLAY - Fountain Script Data Manager
 
+![alt text](img/icon.png)
+
 ## Overview
 
 This Python script provides a command-line tool for processing and searching Fountain screenplay script files. It allows you to:
