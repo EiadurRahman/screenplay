@@ -32,7 +32,7 @@ cd screenplay
 
 2. Ensure you have Python installed:
 ```bash
-python --version
+python --version 
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ python --version
 
 To add a new episode from a Fountain script file:
 ```bash
-python script.py addEpisode path/to/your/screenplay.fountain
+python main.py addEpisode path/to/your/screenplay.fountain
 ```
 
 ### Searching for Artists
@@ -78,13 +78,13 @@ Artist details should be enclosed in square brackets:
 
 ### Adding an Episode
 ```bash
-python script.py addEpisode episode_1.fountain
+python main.py addEpisode episode_1.fountain
 ```
 
 ### Searching
 ```bash
-python script.py lookup --artist "Sarah"
-python script.py lookup --location "Office"
+python main.py lookup --artist "Sarah"
+python main.py lookup --location "Office"
 ```
 
 ## Output
