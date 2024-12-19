@@ -2,3 +2,5 @@ build
 main.spec
 ep1.fountain
 dist\data.json
+data.json
+ignr/

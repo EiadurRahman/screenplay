@@ -131,12 +131,34 @@ def lookup(json_file: str, search_type: str, search_value: str) -> None:
         print(f"Search Results for Artist: {search_value}")
         for entry in data:
             for scene in entry["scenes"]:
+                # Check if the searched artist is in this scene
+                searched_artist = None
+                other_artists = []
+                
+                # Separate the searched artist from other artists
                 for artist in scene["artists"]:
                     if search_value in artist["artist"].lower():
-                        print(f"  |_scene {scene['scene_number']} : {scene['setting']}, {scene['TOD']}")
-                        print(f"    |_location : {scene['location']}")
-                        print(f"    |_costume : {artist['costume']}")
-                        print(f"    |_props : {artist['props']}\n")
+                        searched_artist = artist
+                    else:
+                        other_artists.append(artist)
+                
+                # Only print scene info if searched artist is found
+                if searched_artist:
+                    print(f"  |_scene {scene['scene_number']} : {scene['setting']}, {scene['TOD']}")
+                    print(f"    |_location : {scene['location']}")
+                    print(f"        |_artist_name : {searched_artist['artist']}")
+                    print(f"            |_costume : {searched_artist['costume']}")
+                    print(f"            |_props : {searched_artist['props']}")
+                    print("     ")  # Empty line between artists
+                    
+                    # Print other artists in the same scene
+                    for idx, artist in enumerate(other_artists, 1):
+                        print(f"        |_other_artist_{idx} : {artist['artist']}")
+                        print(f"            |_costume : {artist['costume']}")
+                        print(f"            |_props : {artist['props']}")
+                        if idx < len(other_artists):  # Add space between artists except after the last one
+                            print("     ")
+                    print()  # Empty line between scenes
 
     elif search_type == "location":
         print(f"Search Results for Location: {search_value}")
@@ -144,14 +166,16 @@ def lookup(json_file: str, search_type: str, search_value: str) -> None:
             for scene in entry["scenes"]:
                 if search_value in scene["location"].lower():
                     print(f"  |_scene {scene['scene_number']} : {scene['setting']}, {scene['TOD']}")
-                    for artist in scene["artists"]:
-                        print(f"    |_artist : {artist['artist']}")
-                        print(f"      |_costume : {artist['costume']}")
-                        print(f"      |_props : {artist['props']}\n")
+                    for idx, artist in enumerate(scene["artists"], 1):
+                        print(f"        |_artist_{idx} : {artist['artist']}")
+                        print(f"            |_costume : {artist['costume']}")
+                        print(f"            |_props : {artist['props']}")
+                        if idx < len(scene["artists"]):
+                            print("     ")
+                    print()
 
     else:
         print("Invalid search type. Please use 'artist' or 'location'.")
-
 
 def add_episode_from_file(input_file: str, json_file: str = "data.json") -> None:
     """
