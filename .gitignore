@@ -4,3 +4,4 @@ ep1.fountain
 dist\data.json
 data.json
 ignr/
+__pycache__/
