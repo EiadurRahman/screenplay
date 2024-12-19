@@ -26,8 +26,8 @@ This Python script provides a command-line tool for processing and searching Fou
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/fountain-script-manager.git
-cd fountain-script-manager
+git clone https://github.com/EiadurRahman/screenplay.git
+cd screenplay
 ```
 
 2. Ensure you have Python installed:
@@ -48,14 +48,14 @@ python script.py addEpisode path/to/your/screenplay.fountain
 
 To search for an artist across all episodes:
 ```bash
-python script.py lookup --artist "John Doe"
+python main.py lookup --artist "John Doe"
 ```
 
 ### Searching for Locations
 
 To search for a specific location:
 ```bash
-python script.py lookup --location "Downtown"
+python main.py lookup --location "Downtown"
 ```
 
 ## Fountain Script Format Requirements
