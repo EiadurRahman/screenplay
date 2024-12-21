@@ -8,7 +8,6 @@ ignr/
 
 # PyInstaller build directories
 build/
-dist/
 
 # PyInstaller log and temporary files
 *.log
