@@ -1,7 +1,18 @@
-build
-main.spec
-ep1.fountain
+# others
 dist\data.json
 data.json
 ignr/
+
+# spec file
+*.spec
+
+# PyInstaller build directories
+build/
+dist/
+
+# PyInstaller log and temporary files
+*.log
+*.tmp
+
+# PyInstaller output and cache
 __pycache__/
