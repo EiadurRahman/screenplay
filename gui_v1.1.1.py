@@ -85,7 +85,7 @@ class ScriptManagerGUI:
             for episode in data:
                 # Add episode header
                 formatted_text.append(f"# EP {episode['episode']}\n")
-                formatted_text.append("# scenes :\n")
+                formatted_text.append("## scenes :\n")
                 
                 # Process each scene
                 for scene in episode['scenes']:
