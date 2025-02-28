@@ -7,36 +7,44 @@
 This project offers a tool for managing Fountain screenplay script data with both command-line and GUI options. It enables you to:
 - Add episodes from Fountain script files to a JSON database
 - Look up details about artists and locations across your scripts
-- Use a user-friendly GUI to interact with the tool
+- Use a user-friendly GUI with theme support to interact with the tool
 - Format and export screenplay data into Markdown files
 - Save search results in both text and Markdown formats
 
 ## Features
 
-- **Command-line mode**:
-  - Process Fountain screenplay files and extract:
-    - Synopsis  
-    - Scene details (setting, location, time of day)
-    - Artist information (artist name, costume, props)
-  - Store parsed data in a JSON file
-  - Search for artists or locations across multiple episodes
-  - Save search results in text and Markdown files
-  - Format and export screenplay data into a `.md` file
-  - Prevent duplicate episode processing
-- **GUI mode**:
-  - Perform all actions available in the command-line version through a graphical interface
-  - Easy access for non-technical users
-  - Compiled GUI version available for direct use (in dist/ directory)
+### Command-line Mode
+- Process Fountain screenplay files and extract:
+  - Synopsis  
+  - Scene details (setting, location, time of day)
+  - Artist information (artist name, costume, props)
+- Store parsed data in a JSON file
+- Search for artists or locations across multiple episodes
+- Save search results in text and Markdown files
+- Format and export screenplay data into a `.md` file
+- Prevent duplicate episode processing
+
+### GUI Mode (Now with Themed Interface)
+- Perform all actions available in the command-line version through a graphical interface
+- Easy access for non-technical users
+- Dark and Light theme support (Switch between Cyborg and Yeti themes)
+- Compiled GUI version available for direct use (in `dist/` directory) 
+
+  <img src="img/dark-theme.png" hight=300 width = 400>
+
+**Note :** newest version are not pre-compiled, you need to manually compiled it.
 
 ## Requirements
 
-- **Command-line version**:
-  - Python 3.7+
-  - Standard library modules: `re`, `json`, `os`, `sys`, `argparse`
-- **GUI version**:
-  - Python 3.7+
-  - Requires `tkinter` (included with most Python distributions)
-  - **Compiled version**: No additional dependencies needed (available in the `dist/` directory)
+### Command-line Version
+- Python 3.7+
+- Standard library modules: `re`, `json`, `os`, `sys`, `argparse`
+
+### GUI Version
+- Python 3.7+
+- `tkinter` (included with most Python distributions)
+- `ttkbootstrap` (for themed GUI experience)
+- **Compiled version**: No additional dependencies needed (available in the `dist/` directory)
 
 ## Installation
 
@@ -46,20 +54,21 @@ This project offers a tool for managing Fountain screenplay script data with bot
     git clone https://github.com/EiadurRahman/screenplay.git
     cd screenplay
     ```
-
 2. Ensure you have Python installed:
     ```bash
-    python --version 
+    python --version
     ```
 
 ### GUI Version
-1. **Running the Python GUI**:
-    - Open the `gui_version.py` file using Python:
-      ```bash
-      python gui_version.py # try to use latest version (in root directory)
-      ```
-
-2. **Using the Compiled GUI**:
+1. Install dependencies (only for running the Python GUI version):
+    ```bash
+    pip install ttkbootstrap
+    ```
+2. Run the GUI:
+    ```bash
+    python gui_version.py # Now with themes!
+    ```
+3. **Using the Compiled GUI**:
     - Locate the executable in the `dist/` directory:
       - Windows: `dist/ScriptManager_version.exe`
     - Run the executable directly (no Python required).
@@ -67,67 +76,49 @@ This project offers a tool for managing Fountain screenplay script data with bot
 ## Usage
 
 ### Command-line Version
-
 #### Adding an Episode
-To add a new episode from a Fountain script file:
 ```bash
-python main.py addEpisode path/to/your/screenplay.fountain
+python main.py addEpisode path/to/screenplay.fountain
 ```
-### Searching for Artists
 
-To search for an artist across all episodes:
+#### Searching for Artists
 ```bash
 python main.py lookup --artist "John Doe"
 ```
 
-### Searching for Locations
-
-To search for a specific location:
+#### Searching for Locations
 ```bash
 python main.py lookup --location "Downtown"
 ```
 
+### GUI Version
+- Open the application.
+- Click `Add Episode` to process a new screenplay.
+- Use the `Search` tab to look for Artists or Locations.
+- Switch themes using the `Switch to Light/Dark Mode` button.
+
 ## Fountain Script Format Requirements
 
-The script expects Fountain scripts with specific formatting:
-
-### Synopsis 
-Synopsis should follow this format:
+### Synopsis
 ```
 = this is a synopsis
 ```
 
 ### Scene Headings
-Scene headings should follow this format:
 ```
 EXT. or INT. or EXT/INT. Location - Time of Day #SceneNumber#
 ```
 
 ### Artist/Costume/Props
-Artist details should be enclosed in square brackets:
 ```
 [Artist Name, Costume Description, Props]
-```
-
-## Example work flow (CLI)
-
-### Adding an Episode
-```bash
-python main.py addEpisode episode_1.fountain
-```
-
-### Searching
-```bash
-python main.py lookup --artist "Sarah"
-python main.py lookup --location "Office"
 ```
 
 ## Output
 
 - Parsed data is saved in `data.json`
 - Search results display Synopsis, scene number, setting, location, and artist details
-
-### Note: Previous versions of the code are stored in the `obsolete/` directory. These are not recommended for use.
+- Themed GUI enhances readability and user experience
 
 ## Contact
 

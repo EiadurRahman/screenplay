@@ -65,6 +65,12 @@ class ScriptManagerGUI:
         self.current_results = []
         self.current_search_term = ""
 
+        # Creator Label at the Top-Right Corner
+        creator_label = ttk.Label(root, text="Made by Eiadur Rahman", font=("Arial", 10))
+        creator_label.place(relx=0.0, rely=0.0, anchor="nw", x=10, y=10)  # Adjust x, y for spacing
+
+
+
     def _toggle_theme(self):
         """Toggle between dark and light themes"""
         if self.current_theme == self.dark_theme:
