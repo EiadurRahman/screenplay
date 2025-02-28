@@ -2,6 +2,8 @@
 dist\data.json
 data.json
 ignr/
+test/
+future/
 
 # spec file
 *.spec
@@ -15,3 +17,4 @@ build/
 
 # PyInstaller output and cache
 __pycache__/
+

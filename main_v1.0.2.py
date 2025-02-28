@@ -4,6 +4,11 @@ import os
 import sys
 import argparse
 
+'''
+hey dev here. this was the initial version of the script. as you can see, it's a bit messy and not very user-friendly. but it works! and fully functional.
+but most of the futhur improvements are made in the next versions (GUI VERSIONS). but all the core functionalities are same in all versions. 
+'''
+
 # Configure output encoding
 sys.stdout.reconfigure(encoding='utf-8')
 

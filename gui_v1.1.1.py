@@ -5,6 +5,17 @@ import os
 import re
 import sys
 
+
+# '''
+# from the dev : hi? if you are reading this, you are probably a developer or a curious person.
+# this is a script that is a part of a project that i am working on. this script is a part of a GUI that is used to manage scripts.
+# this code is messy filled with notes and comments. this is because i am still working on it and i am trying to figure out how to do things.
+# some of this notation is written by llms, i didn't use llms to write the whole code rather i used it to format the code.
+# if you are a developer and you are reading this, i would like to say that i am sorry for the mess and i hope you understand.
+# - eiadurrahman (dev :D)
+
+# '''
+
 class ScriptManagerGUI:
     def __init__(self, root):
         self.root = root
